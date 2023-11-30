@@ -1,0 +1,192 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  margin-inline-start: 0;
+  margin-inline-end: 0;
+  padding-block-start: 0;
+  padding-inline-start: 0;
+  padding-inline-end: 0;
+  padding-block-end: 0;
+}
+
+body {
+  background: #efefef;
+}
+
+body:before {
+  content: "";
+  width: 100%;
+  height: 368px;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  background: #535971;
+}
+
+.page {
+  width: 750px;
+  margin: auto;
+}
+
+header {
+  width: 360px;
+  margin-top: 140px;
+}
+
+h1,
+h2,
+legend,
+footer {
+  font-family: "Staatliches", sans-serif;
+}
+
+body,
+input,
+button,
+select,
+textarea,
+label {
+  font-family: "Poppins", sans-serif;
+}
+
+header h1 {
+  color: #fff;
+  font-size: 48px;
+  font-weight: 400;
+}
+
+header p {
+  color: #fff;
+  font-size: 20px;
+  font-weight: 400;
+
+  margin-top: 18px;
+}
+
+form {
+  background: #fff;
+  margin-top: 58px;
+  padding: 64px 64px 0px 64px;
+  border-radius: 20px 20px 0 0;
+
+  min-height: 300px;
+
+  display: flex;
+  flex-direction: column;
+}
+
+form h2 {
+  color: #535971;
+  font-size: 20px;
+  font-weight: 400;
+  margin-bottom: 8px;
+}
+
+fieldset {
+  border: none;
+}
+
+.fieldset-wrapper {
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+}
+
+.input-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+.col-2 {
+  display: flex;
+  gap: 20px;
+}
+.col-2 > div:nth-child(1) {
+  width: 100%;
+}
+
+.fieldset-wrapper .col-2 .input-wrapper {
+  width: 50%;
+}
+.col-3 {
+  display: flex;
+}
+
+.col-3 > div:nth-child(1) {
+  width: 100%;
+}
+
+.fieldset-wrapper .col-3 .input-wrapper {
+  width: 27%;
+  margin-right: 10px;
+}
+
+.fieldset-wrapper .col-3 .input-wrapper:first-child {
+  width: 46%;
+  margin-right: 32px;
+}
+
+.first-legend {
+  margin-bottom: 36px;
+}
+
+legend {
+  color: #535971;
+  font-size: 24px;
+  font-weight: 400;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #e6e6f0;
+
+  width: 100%;
+}
+
+label {
+  margin-bottom: 8px;
+  color: #4e4958;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+span {
+  color: #c1bccc;
+  font-size: 12px;
+  font-weight: 400;
+}
+
+input {
+  height: 56px;
+  border: 1px solid #e6e6f0;
+  border-radius: 8px;
+  background: #fafafc;
+  margin-bottom: 16px;
+  padding: 0 24px;
+}
+
+footer {
+  background: #535971;
+  height: 160px;
+  border-radius: 0px 0px 20px 20px;
+  padding-top: 53px;
+}
+
+footer button {
+  display: flex;
+  margin: auto;
+  justify-content: center;
+
+  width: 608px;
+  height: 56px;
+  padding: 15px 40px;
+
+  border-radius: 20px;
+  border: none;
+  background: #ff5374;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 400;
+  font-style: normal;
+}
