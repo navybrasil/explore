@@ -9,13 +9,14 @@
 :root {
   font-size: 62.5%;
 
-  --hue: 240;
-  /* --hue: 310; */
-  --color-base-white: hsl(0, 0%, 100%);
-  --color-base-gray-100: hsl(0, 0%, 96%);
-  --color-base-gray-300: hsl(var(--hue), 6%, 58%);
-  --color-base-gray-500: hsl(0, 0%, 24%);
-  --color-base-gray-900: hsl(var(--hue), 60%, 13%);
+--hue: 310;
+--sut: 6%;
+--lig: 13%;
+--color-base-white: hsl(0, 0%, 100%);
+--color-base-gray-100: hsl(0, 0%, 96%);
+--color-base-gray-300: hsl(var(--hue), 6%, 58%);
+--color-base-gray-500: hsl(0, 0%, 24%);
+--color-base-gray-900: hsl(var(--hue), var(--sut) ,var(--lig));
 }
 
 html,
