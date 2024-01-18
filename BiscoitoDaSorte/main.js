@@ -67,14 +67,12 @@ const fortuneCookie = [
 ]
 
 clickCookie.addEventListener("click", handleTryClick)
-btnCloseCookie.addEventListener("click", handleResetClick)
+btnCloseCookie.addEventListener("click", toggleScreen)
+document.addEventListener("keydown", eventEnter)
 
 function handleTryClick() {
   let index = random()
   msgFortuneCookie.innerHTML = fortuneCookie[index]
-  toggleScreen()
-}
-function handleResetClick() {
   toggleScreen()
 }
 
@@ -87,4 +85,15 @@ function random(index) {
   index = Math.round(Math.random() * 47)
   console.log(index)
   return index
+}
+
+function eventEnter(e) {
+  if (e.key == "Enter" && screenFortuneCookie.classList.contains("hide")) {
+    handleTryClick()
+  } else if (
+    e.key == "Enter" &&
+    screenOpenedCookie.classList.contains("hide")
+  ) {
+    toggleScreen()
+  }
 }
