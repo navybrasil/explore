@@ -16,3 +16,10 @@ export const Modal = {
 Modal.buttonClose.onclick = () => {
   Modal.close()
 }
+
+export function eventEnter(e) {
+  if (e.key == "Enter" && Modal.wrapper.classList.contains("open")) {
+    Modal.close()
+    console.log("Teclado aqui")
+  }
+}

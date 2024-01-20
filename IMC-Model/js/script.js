@@ -1,18 +1,17 @@
-import { Modal } from "./modal.js"
+import { Modal, eventEnter } from "./modal.js"
 
 // variáveis - variables
 const form = document.querySelector("form")
 const inputWeight = document.querySelector("#weight")
 const inputHeight = document.querySelector("#height")
-const screen1 = document.querySelector(".modal-wrapper")
 
 document.addEventListener("keydown", eventEnter)
-function eventEnter(e) {
-  if (e.key == "Enter" && screen1.classList.contains("open")) {
-    Modal.close()
-    console.log("Teclado aqui")
-  }
-}
+// function eventEnter(e) {
+//   if (e.key == "Enter" && screen1.classList.contains("open")) {
+//     Modal.close()
+//     console.log("Teclado aqui")
+//   }
+// }
 
 form.onsubmit = (event) => {
   event.preventDefault()
