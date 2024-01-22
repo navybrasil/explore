@@ -1,31 +1,36 @@
-import { Modal, eventEnter } from "./modal.js"
+import { Modal } from "./modal.js"
+import { AlertError } from "./alert-error.js"
+import { calculateIMC, notANumber } from "./utiils.js"
 
 // variáveis - variables
 const form = document.querySelector("form")
 const inputWeight = document.querySelector("#weight")
 const inputHeight = document.querySelector("#height")
 
-document.addEventListener("keydown", eventEnter)
-// function eventEnter(e) {
-//   if (e.key == "Enter" && screen1.classList.contains("open")) {
-//     Modal.close()
-//     console.log("Teclado aqui")
-//   }
-// }
-
+inputWeight.oninput = () => AlertError.close() // executa a função assim que começa a digitar no input
+inputHeight.oninput = () => AlertError.close()
 form.onsubmit = (event) => {
   event.preventDefault()
 
   const weight = inputWeight.value
   const height = inputHeight.value
 
-  const result = IMC(weight, height)
+  const weightOrHeightIsNotANumber = notANumber(weight) || notANumber(height)
+
+  if (weightOrHeightIsNotANumber) {
+    AlertError.open()
+    return
+  }
+
+  AlertError.close()
+
+  const result = calculateIMC(weight, height)
+  displayResultMessage(result)
+}
+
+function displayResultMessage(result) {
   const message = `Seu IMC é de ${result}`
 
   Modal.message.innerText = message
   Modal.open()
-}
-
-function IMC(weight, height) {
-  return (weight / (height / 100) ** 2).toFixed(2)
 }

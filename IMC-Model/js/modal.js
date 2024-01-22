@@ -8,7 +8,6 @@ export const Modal = {
   },
   close() {
     Modal.wrapper.classList.remove("open")
-    console.log("CLOSE Teclado aqui")
     document.getElementById(".modal-wrapper")
   },
 }
@@ -17,9 +16,11 @@ Modal.buttonClose.onclick = () => {
   Modal.close()
 }
 
-export function eventEnter(e) {
-  if (e.key == "Enter" && Modal.wrapper.classList.contains("open")) {
+// tecla esc
+window.addEventListener("keydown", handKeydown)
+function handKeydown(event) {
+  // console.log(event.key) // MOSTRA A TECLA PRECIONADA
+  if (event.key === "Escape") {
     Modal.close()
-    console.log("Teclado aqui")
   }
 }
